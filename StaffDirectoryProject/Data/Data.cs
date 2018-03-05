@@ -71,16 +71,16 @@ namespace CorgiDev.StaffDirectoryProject.Data
 
             var entries = new List<Entry>()
             {
-                new Entry(1, 691, "John", "Smith", "Lead Graphic Designer", Department.DepartmentName.GraphicProduction, Skill.SkillType.AccessibleImages),
-                new Entry(2, 912, "Jane", "Smith", "Lead Production Engineer", Department.DepartmentName.Engineering, Skill.SkillType.AccessibleProductDesign),
-                new Entry(3, 132, "Scott", "Jones", "Lead Test Designer", Department.DepartmentName.ATT, Skill.SkillType.AccessibleTestDesign),
-                new Entry(4, 123, "Mary", "Smith", "Lead Researcher", Department.DepartmentName.EducationalProductResearch, Skill.SkillType.AccessiblePDF),
-                new Entry(5, 556, "Elizabeth", "Gray", "Computer Support Specialist", Department.DepartmentName.CTS, Skill.SkillType.AccessiblePowerPoint),
-                new Entry(6, 621, "Jacob", "Scott", "Lead Accountant", Department.DepartmentName.MarketingAndSales, Skill.SkillType.AccessibleExcelDocument),
-                new Entry(7, 543, "Jason", "Willis", "VP of Educational Services and Product Development", Department.DepartmentName.Executive, Skill.SkillType.AccessibleWordDocument),
-                new Entry(8, 882, "Ben", "Appleton", "Lead Web Developer", Department.DepartmentName.TPR, Skill.SkillType.AccessibleWebDesign),
-                new Entry(9, 953, "Lindsey", "Brymer", "Lead Transcriber", Department.DepartmentName.BrailleTranscription, Skill.SkillType.BrailleTranslation),
-                new Entry(10, 105, "Janette", "Williams", "Lead Braillo Operator", Department.DepartmentName.BrailleProduction, Skill.SkillType.EmbosserUse)
+                new Entry(1, 691, "John", "Smith", "Lead Graphic Designer", Department.DepartmentName.GraphicProduction, "123-123-1234", "jsmith@domain.com", Skill.SkillType.AccessibleImages),
+                new Entry(2, 912, "Jane", "Smith", "Lead Production Engineer", Department.DepartmentName.Engineering, "234-234-2345", "jasmith@domain.com", Skill.SkillType.AccessibleProductDesign),
+                new Entry(3, 132, "Scott", "Jones", "Lead Test Designer", Department.DepartmentName.ATT, "345-345-3456", "sjones@domain.com", Skill.SkillType.AccessibleTestDesign),
+                new Entry(4, 123, "Mary", "Smith", "Lead Researcher", Department.DepartmentName.EducationalProductResearch, "456-456-4567", "msmith@domain.com", Skill.SkillType.AccessiblePDF),
+                new Entry(5, 556, "Elizabeth", "Gray", "Computer Support Specialist", Department.DepartmentName.CTS, "567-567-5678", "egray@domain.com", Skill.SkillType.AccessiblePowerPoint),
+                new Entry(6, 621, "Jacob", "Scott", "Lead Accountant", Department.DepartmentName.MarketingAndSales, "678-678-6789", "jscott@domain.com", Skill.SkillType.AccessibleExcelDocument),
+                new Entry(7, 543, "Jason", "Willis", "VP of Educational Services and Product Development", Department.DepartmentName.Executive, "789-789-7890", "jwillis@domain.com", Skill.SkillType.AccessibleWordDocument),
+                new Entry(8, 882, "Ben", "Appleton", "Lead Web Developer", Department.DepartmentName.TPR, "890-890-8901", "bappleton@domain.com", Skill.SkillType.AccessibleWebDesign),
+                new Entry(9, 953, "Lindsey", "Brymer", "Lead Transcriber", Department.DepartmentName.BrailleTranscription, "901-901-9012", "LBrymer@domain.com", Skill.SkillType.BrailleTranslation),
+                new Entry(10, 105, "Janette", "Williams", "Lead Braillo Operator", Department.DepartmentName.BrailleProduction, "102-102-1023", "jwilliams@domain.com", Skill.SkillType.EmbosserUse)
             };
 
             Departments = departments;

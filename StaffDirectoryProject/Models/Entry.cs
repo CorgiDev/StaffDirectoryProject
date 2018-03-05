@@ -18,17 +18,19 @@ namespace CorgiDev.StaffDirectoryProject.Models
         /// <summary>
         /// Constructor for easily creating entries.
         /// </summary>
-        /// /// <param name="id">The ID for the entry.</param>
+        /// <param name="id">The ID for the entry.</param>
         /// <param name="employeeId">The employee ID for the entry.</param>
         /// <param name="firstName">The first name for the entry.</param>
         /// <param name="lastName">The last name for the entry month.</param>
         /// <param name="jobTitle">The job title for the entry.</param>
         /// <param name="departmentName">The department name for the entry.</param>
+        /// <param name="phoneNumber">The phone number for the entry.</param>
+        /// <param name="emailAddress">The email address for the entry.</param>
         /// <param name="skillType">The skill type for the entry.</param>
         /// <param name="notes">The notes for the entry.</param>
 
-        public Entry(int id, int employeeId, string firstName, string lastName, string jobTitle, Department.DepartmentName departmentName, Skill.SkillType skillType,
-            string notes = null)
+        public Entry(int id, int employeeId, string firstName, string lastName, string jobTitle, Department.DepartmentName departmentName, 
+            string phoneNumber, string emailAddress, Skill.SkillType skillType, string notes = null)
         {
             Id = id;
             EmployeeId = (int)employeeId;
@@ -36,6 +38,8 @@ namespace CorgiDev.StaffDirectoryProject.Models
             LastName = lastName;
             JobTitle = jobTitle;
             DepartmentId = (int)departmentName;
+            PhoneNumber = phoneNumber;
+            EmailAddress = emailAddress;
             SkillId = (int)skillType;
             Notes = notes;
         }
@@ -76,9 +80,21 @@ namespace CorgiDev.StaffDirectoryProject.Models
         public int DepartmentId { get; set; }
 
         /// <summary>
-        /// The department for the entry.
+        /// The Department for the entry.
         /// </summary>
         public Department Department { get; set; }
+
+        /// <summary>
+        /// The Phone Number of the entry.
+        /// </summary>
+        [Display(Name = "Phone Number")]
+        public string PhoneNumber { get; set; }
+
+        /// <summary>
+        /// The Email Address of the entry.
+        /// </summary>
+        [Display(Name = "Email Address")]
+        public string EmailAddress { get; set; }
 
         /// <summary>
         /// The skill ID for the entry. The ID value should map to an ID in the skills collection.
