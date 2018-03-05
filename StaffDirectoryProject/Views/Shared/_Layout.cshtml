@@ -1,9 +1,26 @@
-﻿<!DOCTYPE html>
+﻿@{
+    var applicationName = "Accessibility Help Directory";
+}
+
+@helper GetAddEntryButtonVisibility()
+{
+if ((string)ViewContext.RouteData.Values["controller"] == "Entries" &&
+    (string)ViewContext.RouteData.Values["action"] == "Add")
+{
+        <text>hidden</text>
+}
+else
+{
+        <text>visible</text>
+}
+}
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - CorgiDev - Staff Directory</title>
+    <title>@ViewBag.Title - @applicationName</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
@@ -16,11 +33,15 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Accessible Help Directory", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                <a class="navbar-brand" href="@Url.Action("Index", "Home")">
+                    @Html.Partial("_Logo", new ViewDataDictionary { { "element-id", "logo" } })
+                    @applicationName
+                </a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Directory","List","Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                 </ul>

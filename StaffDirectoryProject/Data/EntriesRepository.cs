@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace StaffDirectoryProject.Data
+namespace CorgiDev.StaffDirectoryProject.Data
 {
     public class EntriesRepository
     {
