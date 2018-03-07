@@ -20,7 +20,7 @@ else
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - @applicationName</title>
+    <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
@@ -62,12 +62,13 @@ else
     <script src="~/Scripts/jquery.validate.min.js"></script>
     <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
     <script src="~/Scripts/jquery.validate.bootstrap.js"></script>
-    <script src="~/Scripts/bootstrap-datepicker.min.js"></script>
+    @*May uncomment the datepicker code later when I add additional features.*@
+    @*<script src="~/Scripts/bootstrap-datepicker.min.js"></script>
     <script>
         $('input.datepicker').datepicker({
             format: 'm/d/yyyy'
         })
-    </script>
+    </script>*@
     @RenderSection("scripts", required: false)
 </body>
 </html>

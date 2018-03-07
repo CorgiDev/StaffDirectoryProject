@@ -164,6 +164,9 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\corgidev-logo-64px.png" />
+    <Content Include="Content\Images\corgidev-logo-70px.png" />
+    <Content Include="Content\Images\corgidev-logo.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
