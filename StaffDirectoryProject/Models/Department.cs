@@ -44,6 +44,7 @@ namespace CorgiDev.StaffDirectoryProject.Models
 
         /// <summary>
         /// The ID of the department.
+        /// This is the primary key. However, it is manually set right now rather than auto-incremented.
         /// </summary>
         public int Id { get; set; }
 
