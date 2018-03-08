@@ -1,7 +1,119 @@
-﻿
+﻿@model CorgiDev.StaffDirectoryProject.Models.Entry
+
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "Delete Staff Listing";
 }
 
-<h2>Delete</h2>
+<h2>@ViewBag.Title</h2>
 
+<div class="alert alert-danger">
+    Are you sure you want to delete the selected staff listing?
+</div>
+
+<div class="row">
+    <div class="col-lg-6">
+        @*Listing Employee ID*@
+        <div class="row">
+            <div class="col-xs-4 col-sm-3">
+                @Html.LabelFor(m => m.EmployeeId)
+            </div>
+            <div class="col-xs-8 col-sm-9">
+                @Model.EmployeeId
+            </div>
+        </div>
+
+        @*Listing Employee First Name*@
+        <div class="row">
+            <div class="col-xs-4 col-sm-3">
+                @Html.LabelFor(m => m.FirstName)
+            </div>
+            <div class="col-xs-8 col-sm-9">
+                @Model.FirstName
+            </div>
+        </div>
+
+        @*Listing Employee Last Name*@
+        <div class="row">
+            <div class="col-xs-4 col-sm-3">
+                @Html.LabelFor(m => m.LastName)
+            </div>
+            <div class="col-xs-8 col-sm-9">
+                @Model.LastName
+            </div>
+        </div>
+
+        @*Listing Employee Job Title*@
+        <div class="row">
+            <div class="col-xs-4 col-sm-3">
+                @Html.LabelFor(m => m.JobTitle)
+            </div>
+            <div class="col-xs-8 col-sm-9">
+                @Model.JobTitle
+            </div>
+        </div>
+
+        @*Listing Employee Department Name*@
+        <div class="row">
+            <div class="col-xs-4 col-sm-3">
+                @Html.LabelFor(m => m.DepartmentId)
+            </div>
+            <div class="col-xs-8 col-sm-9">
+                @Model.Department.Name
+            </div>
+        </div>
+
+        @*Listing Employee Phone Number*@
+        <div class="row">
+            <div class="col-xs-4 col-sm-3">
+                @Html.LabelFor(m => m.PhoneNumber)
+            </div>
+            <div class="col-xs-8 col-sm-9">
+                @Model.PhoneNumber
+            </div>
+        </div>
+
+        @*Listing Employee Email Address*@
+        <div class="row">
+            <div class="col-xs-4 col-sm-3">
+                @Html.LabelFor(m => m.EmailAddress)
+            </div>
+            <div class="col-xs-8 col-sm-9">
+                @Model.EmailAddress
+            </div>
+        </div>
+
+        @*Listing Employee Skill*@
+        <div class="row">
+            <div class="col-xs-4 col-sm-3">
+                @Html.LabelFor(m => m.SkillId)
+            </div>
+            <div class="col-xs-8 col-sm-9">
+                @Model.Skill.Name
+            </div>
+        </div>
+
+        @*Listing Employee Notes*@
+        <div class="row">
+            <div class="col-xs-4 col-sm-3">
+                @Html.LabelFor(m => m.Notes)
+            </div>
+            <div class="col-xs-8 col-sm-9">
+                @Model.Notes
+            </div>
+        </div>
+
+        @using (Html.BeginForm())
+        {
+            <div class="pad-top">
+                <button type="submit" class="btn btn-danger btn-lg margin-right">
+                    <span class="glyphicon glyphicon-trash"></span> Delete
+                </button>
+                <a href="@Url.Action("Index")" class="btn btn-warning btn-lg">
+                    <span class="glyphicon glyphicon-remove"></span> Cancel
+                </a>
+            </div>
+        }
+
+    </div>
+
+</div>

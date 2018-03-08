@@ -9,35 +9,37 @@
 
 <table class="table">
     <tr>
-        <th>Employee ID</th>
         <th>First Name</th>
         <th>Last Name</th>
         <th>Department</th>
         <th class="hidden-xs">Phone Number</th>
         <th class="hidden-xs">Email Address</th>
-        <th class="hidden-xs">Skill</th>
         <th>&nbsp;</th>
     </tr>
     @foreach (var entry in Model)
     {
         <tr>
-            <td>
-                <span class="hidden-xs">@entry.EmployeeId</span>
-            </td>
             <td>@entry.FirstName</td>
             <td>@entry.LastName</td>
             <td>@entry.Department.Name</td>
             <td class="hidden-xs">@entry.PhoneNumber</td>
             <td class="hidden-xs">@entry.EmailAddress</td>
-            <td class="hidden-xs">@entry.Skill</td>
             <td>
                 <div class="pull-right">
+
+                    @*Change this top button to be a view entry button.*@
+                    @*<a href="@Url.Action("Delete", new { id = entry.Id })" class="btn btn-danger btn-sm">
+                        <span class="glyphicon glyphicon-trash"></span><span class="hidden-xs"> Delete</span>
+                    </a>*@
+
                     <a href="@Url.Action("Edit", new { id = entry.Id })" class="btn btn-warning btn-sm margin-right">
                         <span class="glyphicon glyphicon-edit"></span><span class="hidden-xs"> Edit</span>
                     </a>
+
                     <a href="@Url.Action("Delete", new { id = entry.Id })" class="btn btn-danger btn-sm">
                         <span class="glyphicon glyphicon-trash"></span><span class="hidden-xs"> Delete</span>
                     </a>
+
                 </div>
             </td>
         </tr>

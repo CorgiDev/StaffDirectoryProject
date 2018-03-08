@@ -1,8 +1,12 @@
-﻿@{
-    ViewBag.Title = "Add";
+﻿@model CorgiDev.StaffDirectoryProject.Models.Entry
+
+@{
+    ViewBag.Title = "Add Staff Listing";
 }
 
-<h2>Add</h2>
+<h2>@ViewBag.Title</h2>
+
+@Html.Partial("_EntryForm")
 
 @*
     // TODO: Check if employee ID already in database.

@@ -1,7 +1,9 @@
-﻿
+﻿@model CorgiDev.StaffDirectoryProject.Models.Entry
+
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Edit Staff Listing";
 }
 
-<h2>Edit</h2>
+<h2>@ViewBag.Title</h2>
 
+@Html.Partial("_EntryForm")
