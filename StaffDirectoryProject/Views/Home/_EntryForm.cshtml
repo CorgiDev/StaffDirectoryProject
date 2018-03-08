@@ -1,1 +1,82 @@
-﻿
+﻿@model CorgiDev.StaffDirectoryProject.Models.Entry
+@using CorgiDev.StaffDirectoryProject.Models
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary("The following errors were found: ", new { @class = "alert alert-danger" })
+
+    <div class="row">
+
+        <div class="col-md-6">
+
+            @*Form field to enter Employee ID*@
+            <div class="form-group">
+                @Html.LabelFor(m => m.EmployeeId, new { @class = "control-label" })
+                @Html.TextBoxFor(m => m.EmployeeId, new { @class = "form-control" })
+            </div>
+
+            @*Form field to enter First Name*@
+            <div class="form-group">
+                @Html.LabelFor(m => m.FirstName, new { @class = "control-label" })
+                @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control" })
+            </div>
+
+            @*Form field to enter Last Name*@
+            <div class="form-group">
+                @Html.LabelFor(m => m.LastName, new { @class = "control-label" })
+                @Html.TextBoxFor(m => m.LastName, new { @class = "form-control" })
+            </div>
+
+            @*Form field to enter Job Title*@
+            <div class="form-group">
+                @Html.LabelFor(m => m.JobTitle, new { @class = "control-label" })
+                @Html.TextBoxFor(m => m.JobTitle, new { @class = "form-control" })
+            </div>
+
+            @*Form field to enter Department Name*@
+            <div class="form-group">
+                @Html.LabelFor(m => m.DepartmentId, new { @class = "control-label" })
+                @Html.DropDownListFor(m => m.DepartmentId,
+                    (SelectList)ViewBag.DepartmentsSelectListItems, "", new { @class = "form-control" })
+            </div>
+
+            @*Form field to enter Phone Number*@
+            <div class="form-group">
+                @Html.LabelFor(m => m.PhoneNumber, new { @class = "control-label" })
+                @Html.TextBoxFor(m => m.PhoneNumber, new { @class = "form-control" })
+            </div>
+
+            @*Form field to enter E-Mail Address*@
+            <div class="form-group">
+                @Html.LabelFor(m => m.EmailAddress, new { @class = "control-label" })
+                @Html.TextBoxFor(m => m.EmailAddress, new { @class = "form-control" })
+            </div>
+
+            @*Form field to select Skill*@
+            <div class="form-group">
+                @Html.LabelFor(m => m.SkillId, new { @class = "control-label" })
+                @Html.DropDownListFor(m => m.SkillId,
+                    (SelectList)ViewBag.SkillsSelectListItems, "", new { @class = "form-control" })
+            </div>
+
+            @*Form field to enter Notes*@
+            <div class="form-group">
+                @Html.LabelFor(m => m.Notes, new { @class = "control-label" })
+                @Html.TextAreaFor(m => m.Notes, 14, 20, new { @class = "form-control" })
+            </div>
+
+            @*Submission and Cancel Buttons*@
+            <div class="col-md-12">
+                <div class="pad-top">
+                    <button type="submit" class="btn btn-success btn-lg margin-right">
+                        <span class="glyphicon glyphicon-save"></span> Save
+                    </button>
+                    <a href="@Url.Action("Index")" class="btn btn-warning btn-lg">
+                        <span class="glyphicon glyphicon-remove"></span> Cancel
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+}
