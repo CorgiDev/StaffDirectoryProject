@@ -32,8 +32,9 @@ namespace CorgiDev.StaffDirectoryProject.Data
                         return e; // Return the entry
                     }
                     )
-                .OrderByDescending(e => e.LastName)
-                .ThenByDescending(e => e.Id)
+                //Controls how they are ordered
+                .OrderBy(e => e.LastName)
+                .ThenBy(e => e.Id)
                 .ToList();
         }
 

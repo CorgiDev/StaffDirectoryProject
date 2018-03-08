@@ -53,24 +53,29 @@ namespace CorgiDev.StaffDirectoryProject.Models
         /// The employee ID of the entry.
         /// </summary>
         [Display(Name = "Employee ID")]
+        [Required(ErrorMessage = "Employee ID Required. This is their time clock number.")]
+        [RegularExpression(@"/^[0-9]*$/", ErrorMessage = "Employee ID may only contain numbers.")]
         public int EmployeeId { get; set; }
 
         /// <summary>
         /// The First Name of the entry.
         /// </summary>
         [Display(Name = "First Name")]
+        [Required(ErrorMessage = "First Name Required")]
         public string FirstName { get; set; }
 
         /// <summary>
         /// The Last Name of the entry.
         /// </summary>
         [Display(Name = "Last Name")]
+        [Required(ErrorMessage = "Last Name Required")]
         public string LastName { get; set; }
 
         /// <summary>
         /// The Job Title of the entry.
         /// </summary>
         [Display(Name = "Job Title")]
+        [Required(ErrorMessage = "Job Title Required")]
         public string JobTitle { get; set; }
 
         /// <summary>
@@ -82,18 +87,24 @@ namespace CorgiDev.StaffDirectoryProject.Models
         /// <summary>
         /// The Department for the entry.
         /// </summary>
+        [Required(ErrorMessage = "Department Required")]
         public Department Department { get; set; }
 
         /// <summary>
         /// The Phone Number of the entry.
+        /// Checks for correct format.
         /// </summary>
+        [DataType(DataType.PhoneNumber)]
         [Display(Name = "Phone Number")]
+        [Required(ErrorMessage = "Phone Number Required!")]
+        [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$" , ErrorMessage = "Entered phone format is not valid. Must be in format of ###-###-####.")]
         public string PhoneNumber { get; set; }
 
         /// <summary>
         /// The Email Address of the entry.
         /// </summary>
         [Display(Name = "Email Address")]
+        [EmailAddress(ErrorMessage = "Email Address not in proper format.")]
         public string EmailAddress { get; set; }
 
         /// <summary>
@@ -105,6 +116,7 @@ namespace CorgiDev.StaffDirectoryProject.Models
         /// <summary>
         /// The skill for the entry.
         /// </summary>
+        [Required(ErrorMessage = "Skill Required")]
         public Skill Skill { get; set; }
 
         /// <summary>
