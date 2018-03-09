@@ -4,7 +4,7 @@
 
 @helper GetAddEntryButtonVisibility()
 {
-if ((string)ViewContext.RouteData.Values["controller"] == "Entries" &&
+if ((string)ViewContext.RouteData.Values["controller"] == "Home" &&
     (string)ViewContext.RouteData.Values["action"] == "Add")
 {
         <text>hidden</text>
@@ -46,7 +46,7 @@ else
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                 </ul>
-                <a href="@Url.Action("Add", "Entries")" style="visibility: @GetAddEntryButtonVisibility()"
+                <a href="@Url.Action("Add", "Home")" style="visibility: @GetAddEntryButtonVisibility()"
                    class="btn btn-primary navbar-btn navbar-right">
                     <span class="glyphicon glyphicon-plus"></span> Add Staff Listing
                 </a>

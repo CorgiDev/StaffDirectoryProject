@@ -54,7 +54,7 @@ namespace CorgiDev.StaffDirectoryProject.Models
         /// </summary>
         [Display(Name = "Employee ID")]
         [Required(ErrorMessage = "Employee ID Required. This is their time clock number.")]
-        [RegularExpression(@"/^[0-9]*$/", ErrorMessage = "Employee ID may only contain numbers.")]
+        //[RegularExpression(@"/^[0-9]*$/", ErrorMessage = "Employee ID may only contain numbers.")]
         public int EmployeeId { get; set; }
 
         /// <summary>
@@ -82,12 +82,12 @@ namespace CorgiDev.StaffDirectoryProject.Models
         /// The department ID for the entry. The ID value should map to an ID in the departments collection.
         /// </summary>
         [Display(Name = "Department")]
+        [Required(ErrorMessage = "Department Required")]
         public int DepartmentId { get; set; }
 
         /// <summary>
         /// The Department for the entry.
         /// </summary>
-        [Required(ErrorMessage = "Department Required")]
         public Department Department { get; set; }
 
         /// <summary>
@@ -111,12 +111,12 @@ namespace CorgiDev.StaffDirectoryProject.Models
         /// The skill ID for the entry. The ID value should map to an ID in the skills collection.
         /// </summary>
         [Display(Name = "Skill")]
+        [Required(ErrorMessage = "Skill Required")]
         public int SkillId { get; set; }
 
         /// <summary>
         /// The skill for the entry.
         /// </summary>
-        [Required(ErrorMessage = "Skill Required")]
         public Skill Skill { get; set; }
 
         /// <summary>
