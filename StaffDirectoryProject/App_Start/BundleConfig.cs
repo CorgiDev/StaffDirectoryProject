@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace StaffDirectoryProject
+namespace CorgiDev.StaffDirectoryProject
 {
     public class BundleConfig
     {
