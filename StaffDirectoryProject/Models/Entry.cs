@@ -19,7 +19,7 @@ namespace CorgiDev.StaffDirectoryProject.Models
         /// Constructor for easily creating entries.
         /// </summary>
         /// <param name="id">The ID for the entry.</param>
-        /// <param name="employeeId">The employee ID for the entry.</param>
+        /// <param name="timeClockNumber">The employee ID for the entry.</param>
         /// <param name="firstName">The first name for the entry.</param>
         /// <param name="lastName">The last name for the entry month.</param>
         /// <param name="jobTitle">The job title for the entry.</param>
@@ -29,11 +29,11 @@ namespace CorgiDev.StaffDirectoryProject.Models
         /// <param name="skillType">The skill type for the entry.</param>
         /// <param name="notes">The notes for the entry.</param>
 
-        public Entry(int id, int employeeId, string firstName, string lastName, string jobTitle, Department.DepartmentName departmentName, 
+        public Entry(int id, int timeClockNumber, string firstName, string lastName, string jobTitle, Department.DepartmentName departmentName, 
             string phoneNumber, string emailAddress, Skill.SkillType skillType, string notes = null)
         {
             Id = id;
-            EmployeeId = (int)employeeId;
+            TimeClockNumber = (int)timeClockNumber;
             FirstName = firstName;
             LastName = lastName;
             JobTitle = jobTitle;
@@ -55,7 +55,7 @@ namespace CorgiDev.StaffDirectoryProject.Models
         [Display(Name = "Employee ID")]
         [Required(ErrorMessage = "Employee ID Required. This is their time clock number.")]
         //[RegularExpression(@"/^[0-9]*$/", ErrorMessage = "Employee ID may only contain numbers.")]
-        public int EmployeeId { get; set; }
+        public int TimeClockNumber { get; set; }
 
         /// <summary>
         /// The First Name of the entry.

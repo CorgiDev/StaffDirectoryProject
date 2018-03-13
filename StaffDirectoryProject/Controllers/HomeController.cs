@@ -43,7 +43,7 @@ namespace CorgiDev.StaffDirectoryProject.Controllers
         [HttpPost]
         public ActionResult Add(Entry entry)
         {
-            ValidateEntry(entry);
+            //ValidateEntry(entry);
 
             if (ModelState.IsValid)
             {
@@ -83,11 +83,13 @@ namespace CorgiDev.StaffDirectoryProject.Controllers
         [HttpPost]
         public ActionResult Edit(Entry entry)
         {
-            ValidateEntry(entry);
+            //ValidateEntry(entry);
 
             if (ModelState.IsValid)
             {
                 _entriesRepository.UpdateEntry(entry);
+
+                TempData["Message"] = "You successfully edited the staff listing.";
 
                 return RedirectToAction("Index");
             }
@@ -126,15 +128,15 @@ namespace CorgiDev.StaffDirectoryProject.Controllers
             return RedirectToAction("Index");
         }
 
-        private void ValidateEntry(Entry entry)
-        {
-            //If there aren't any "Duration" field validation errors
-            //then make sure the duration is greater than "0".
-            //if (ModelState.IsValidField("Duration") && entry.Duration <= 0)
-            //{
-            //    ModelState.AddModelError("Duration", "The Duration field value must be greater than '0'.");
-            //}
-        }
+        //private void ValidateEntry(Entry entry)
+        //{
+        //    //If there aren't any "Duration" field validation errors
+        //    //then make sure the duration is greater than "0".
+        //    if (ModelState.IsValidField("FirstName") && entry.Duration <= 0)
+        //    {
+        //        ModelState.AddModelError("FirstName", "The First Name field value must be greater than '0'.");
+        //    }
+        //}
 
         private void SetupDepartmentsSelectListItems()
         {

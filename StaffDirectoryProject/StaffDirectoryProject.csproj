@@ -150,7 +150,6 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Context.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Data\Data.cs" />
     <Compile Include="Data\DepartmentsRepository.cs" />
