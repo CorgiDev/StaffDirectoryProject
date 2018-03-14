@@ -22,3 +22,160 @@ select,
 textarea {
     max-width: 280px;
 }
+
+/*Makes thead validation message not show up at first when someone opens a form*/
+.validation-summary-valid {
+    display: none
+}
+
+/*Affects thead appearance of inputs when they are accurately filled in or invalid*/
+.has-warning .help-block, .has-warning .control-label, .has-warning .radio, .has-warning .checkbox, .has-warning .radio-inline, .has-warning .checkbox-inline, .has-warning.radio label, .has-warning.checkbox label, .has-warning.radio-inline label, .has-warning.checkbox-inline label, .has-warning .form-control-feedback {
+    color: #f0ad4e
+}
+
+.has-warning .form-control, .has-warning .form-control:focus {
+    border: 4px solid #f0ad4e
+}
+
+.has-warning .input-group-addon {
+    border: none
+}
+
+.has-error .help-block, .has-error .control-label, .has-error .radio, .has-error .checkbox, .has-error .radio-inline, .has-error .checkbox-inline, .has-error.radio label, .has-error.checkbox label, .has-error.radio-inline label, .has-error.checkbox-inline label, .has-error .form-control-feedback {
+    color: #d9534f
+}
+
+.has-error .form-control, .has-error .form-control:focus {
+    border: 4px solid #d9534f
+}
+
+.has-error .input-group-addon {
+    border: none
+}
+
+.has-success .help-block, .has-success .control-label, .has-success .radio, .has-success .checkbox, .has-success .radio-inline, .has-success .checkbox-inline, .has-success.radio label, .has-success.checkbox label, .has-success.radio-inline label, .has-success.checkbox-inline label, .has-success .form-control-feedback {
+    color: #5cb85c
+}
+
+.has-success .form-control, .has-success .form-control:focus {
+    border: 4px solid #5cb85c
+}
+
+.has-success .input-group-addon {
+    border: none
+}
+
+.form-control:focus {
+    -webkit-box-shadow: none;
+    box-shadow: none
+}
+
+.has-warning .form-control:focus, .has-error .form-control:focus, .has-success .form-control:focus {
+    -webkit-box-shadow: none;
+    box-shadow: none
+}
+
+/*Affects the appearance of the alerts on the index page and forms*/
+.alert-dismissable, .alert-dismissible {
+    padding-right: 35px
+}
+
+    .alert-dismissable .close, .alert-dismissible .close {
+        position: relative;
+        top: -2px;
+        right: -21px;
+        color: inherit
+    }
+
+.alert-success {
+    background-color: #5cb85c;
+    border-color: transparent;
+    color: #ebebeb
+}
+
+    .alert-success hr {
+        border-top-color: transparent
+    }
+
+    .alert-success .alert-link {
+        color: #d2d2d2
+    }
+
+.alert-info {
+    background-color: #5bc0de;
+    border-color: transparent;
+    color: #ebebeb
+}
+
+    .alert-info hr {
+        border-top-color: transparent
+    }
+
+    .alert-info .alert-link {
+        color: #d2d2d2
+    }
+
+.alert-warning {
+    background-color: #f0ad4e;
+    border-color: transparent;
+    color: #ebebeb
+}
+
+    .alert-warning hr {
+        border-top-color: transparent
+    }
+
+    .alert-warning .alert-link {
+        color: #d2d2d2
+    }
+
+.alert-danger {
+    background-color: #d9534f;
+    border-color: transparent;
+    color: #ebebeb
+}
+
+    .alert-danger hr {
+        border-top-color: transparent
+    }
+
+    .alert-danger .alert-link {
+        color: #d2d2d2
+    }
+
+/*Affects Logo Appearance*/
+#logo {
+    fill: #fff;
+    display: inline-block;
+    float: left;
+    width: 32px;
+    margin-right: 10px;
+    margin-top: 1px
+}
+
+@media screen and (max-width: 767px) {
+    #logo {
+        width: 24px;
+        margin-top: -3px;
+        margin-right: 8px
+    }
+}
+
+/*Affects Footer Appearance*/
+footer {
+    margin-top: 100px;
+    text-align: center;
+    /*color: rgba(255,255,255,0.5)*/  /*Affects color of footer text*/
+}
+
+@media screen and (max-width: 767px) {
+    footer {
+        margin-top: 50px
+    }
+}
+
+#footer_logo {
+    fill: rgba(255,255,255,0.5);
+    height: 32px;
+    margin-bottom: 15px
+}
