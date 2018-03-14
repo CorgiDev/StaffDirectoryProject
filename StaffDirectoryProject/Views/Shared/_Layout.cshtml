@@ -36,7 +36,7 @@ else
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="@Url.Action("Index", "Home")">
-                    @Html.Partial("_Logo", new ViewDataDictionary { { "element-id", "logo" } })
+                    @*@Html.Partial("_Logo", new ViewDataDictionary { { "element-id", "logo" } })*@
                     @applicationName
                 </a>
             </div>
@@ -57,7 +57,10 @@ else
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - CorgiDev Inc.</p>
+            <p>
+                @Html.Partial("_Logo", new ViewDataDictionary { { "element-id", "logo" } })
+            &copy; @DateTime.Now.Year - CorgiDev Inc.
+        </p>
         </footer>
     </div>
 

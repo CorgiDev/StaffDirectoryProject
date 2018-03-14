@@ -150,14 +150,15 @@ textarea {
     float: left;
     width: 32px;
     margin-right: 10px;
-    margin-top: 1px
+    margin-top: 1px;
 }
 
 @media screen and (max-width: 767px) {
     #logo {
         width: 24px;
         margin-top: -3px;
-        margin-right: 8px
+        margin-right: 5px;
+        padding-right: 5px;
     }
 }
 
