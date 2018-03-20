@@ -40,7 +40,7 @@ Edge for some reason does not like to close out projects when you close the brow
 
 ## Authors
 
-* **EGrayTech** - *Initial work* - [EGrayTech](https://github.com/EGrayTech)
+* **[EGrayTech](https://github.com/EGrayTech)** - *Initial work*
 
 ## Acknowledgments
 
