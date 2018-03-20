@@ -31,7 +31,7 @@ A browser (tested with Google Chrome, IE, Edge and FireFox)
 10. Close the browser once you are done to close out the program.
 
 ## Built With
-* [.Net Framework] (https://docs.microsoft.com/en-us/dotnet/) - The web framework used to develop this project with C#.
+* [.Net Framework](https://docs.microsoft.com/en-us/dotnet/) - The web framework used to develop this project with C#.
 * [ASP.Net Framework](https://blogs.msdn.microsoft.com/webdev/2017/02/07/asp-net-documentation-now-on-docs-microsoft-com/) - The web framework used
 * [Entity Framework](https://docs.microsoft.com/en-us/ef/ef6/)
 
