@@ -22,9 +22,13 @@ A browser (tested with Google Chrome, IE, Edge and FireFox)
 1. Install Visual Studio Community 2017.
 2. Update Visual Studio Community 2017.
 3. Open the Solution file, StaffDirectoryProject.sln, for the program.
-4. Select the browser you wish to run the program with.
-5. Click Start or press F5 to run the program.
-6. Close the browser once you are done to close out the program.
+4. Click "Tools" from the top menu bar.
+5. Select "Nuget Package Manager" and then "Package Manager Console".
+6. In "Package Manager Console", type "update-database", minus the quote marks.This will inject the initial seed data into the database to get you started.
+7. You will be able to tell it is done when the console displays "Running the Seed Method" and then returns to saying "PM>". 
+8. Select the browser you wish to run the program with.
+9. Click Start or press F5 to run the program.
+10. Close the browser once you are done to close out the program.
 
 ## Built With
 * [.Net Framework] (https://docs.microsoft.com/en-us/dotnet/) - The web framework used to develop this project with C#.
