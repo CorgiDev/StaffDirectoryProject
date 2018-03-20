@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -24,7 +25,7 @@ namespace CorgiDev.StaffDirectoryProject.Models
         /// <summary>
         /// Constructors a skill for the provided skill type and name.
         /// </summary>
-        /// <param name="departmentName">The skill type for the skill.</param>
+        /// <param name="skillType">The skill type for the skill.</param>
         /// <param name="name">The name for the skill.</param>
 
         public Skill(SkillType skillType, string name = null)
@@ -33,12 +34,18 @@ namespace CorgiDev.StaffDirectoryProject.Models
 
             // If we don't have a name argument, 
             // then use the string representation of the skill type for the name.
-            Name = name ?? skillType.ToString();
+            Name = name ?? nameof(skillType);
+        }
+
+        public Skill()
+        {
+            
         }
 
         /// <summary>
         /// The ID of the skill.
         /// </summary>
+        [Key]
         public int Id { get; set; }
 
         public string Name { get; set; }

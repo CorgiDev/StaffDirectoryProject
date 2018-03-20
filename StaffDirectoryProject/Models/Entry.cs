@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CorgiDev.StaffDirectoryProject.Models
 {
@@ -47,6 +48,7 @@ namespace CorgiDev.StaffDirectoryProject.Models
         /// <summary>
         /// The ID of the entry.
         /// </summary>
+        [Key]
         public int Id { get; set; }
 
         /// <summary>
@@ -81,6 +83,7 @@ namespace CorgiDev.StaffDirectoryProject.Models
         /// <summary>
         /// The department ID for the entry. The ID value should map to an ID in the departments collection.
         /// </summary>
+        [ForeignKey("Department")]
         [Display(Name = "Department")]
         [Required(ErrorMessage = "Department Required")]
         public int DepartmentId { get; set; }
@@ -88,7 +91,7 @@ namespace CorgiDev.StaffDirectoryProject.Models
         /// <summary>
         /// The Department for the entry.
         /// </summary>
-        public Department Department { get; set; }
+        public virtual Department Department { get; set; }
 
         /// <summary>
         /// The Phone Number of the entry.
@@ -110,6 +113,7 @@ namespace CorgiDev.StaffDirectoryProject.Models
         /// <summary>
         /// The skill ID for the entry. The ID value should map to an ID in the skills collection.
         /// </summary>
+        [ForeignKey("Skill")]
         [Display(Name = "Skill")]
         [Required(ErrorMessage = "Skill Required")]
         public int SkillId { get; set; }
@@ -117,7 +121,7 @@ namespace CorgiDev.StaffDirectoryProject.Models
         /// <summary>
         /// The skill for the entry.
         /// </summary>
-        public Skill Skill { get; set; }
+        public virtual Skill Skill { get; set; }
 
         /// <summary>
         /// The notes for the entry.

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -42,10 +43,16 @@ namespace CorgiDev.StaffDirectoryProject.Models
             Name = name ?? departmentName.ToString();
         }
 
+        public Department()
+        {
+            
+        }
+
         /// <summary>
         /// The ID of the department.
         /// This is the primary key. However, it is manually set right now rather than auto-incremented.
         /// </summary>
+        [Key]
         public int Id { get; set; }
 
         public string Name { get; set; }

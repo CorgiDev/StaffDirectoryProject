@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Runtime.CompilerServices;
 using System.Web;
 using System.Web.Mvc;
+using System.Data.Entity;
 using CorgiDev.StaffDirectoryProject.Data;
 using CorgiDev.StaffDirectoryProject.Models;
 
@@ -22,7 +24,15 @@ namespace CorgiDev.StaffDirectoryProject.Controllers
 
         public ActionResult Index()
         {
-            List<Entry> entries = _entriesRepository.GetEntries();
+            List<Entry> entries; //= _entriesRepository.GetEntries();
+            using (var context = new MyDbContext())
+            {
+                entries = context.Entries
+                    .Include(e => e.Department)
+                    .Include(e => e.Skill)
+                    .OrderBy(e => e.LastName)
+                    .ToList();
+            }
 
             return View(entries);
         }
@@ -44,13 +54,18 @@ namespace CorgiDev.StaffDirectoryProject.Controllers
         public ActionResult Add(Entry entry)
         {
             //ValidateEntry(entry);
+            using (var context = new MyDbContext())
+            {
+                context.Entries.Add(entry);
+                context.SaveChanges();
+            }
 
             if (ModelState.IsValid)
-            {
-                _entriesRepository.AddEntry(entry);
-                TempData["Message"] = "Your staff listing was successfully added.";
-                return RedirectToAction("Index");
-            }
+                {
+                    _entriesRepository.AddEntry(entry);
+                    TempData["Message"] = "Your staff listing was successfully added.";
+                    return RedirectToAction("Index");
+                }
 
             SetupDepartmentsSelectListItems();
 
@@ -66,12 +81,19 @@ namespace CorgiDev.StaffDirectoryProject.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            Entry entry = _entriesRepository.GetEntry((int)id);
+            Entry entry; //= _entriesRepository.GetEntry((int)id);
+            using (var context = new MyDbContext())
+            {
+                entry = context.Entries
+                    .Include(e => e.Department)
+                    .Include(e => e.Skill)
+                    .Single(e => e.Id == id);
+            }
 
             if (entry == null)
-            {
-                return HttpNotFound();
-            }
+                {
+                    return HttpNotFound();
+                }
 
             SetupDepartmentsSelectListItems();
 
@@ -87,7 +109,21 @@ namespace CorgiDev.StaffDirectoryProject.Controllers
 
             if (ModelState.IsValid)
             {
-                _entriesRepository.UpdateEntry(entry);
+                //_entriesRepository.UpdateEntry(entry);
+                using (var context = new MyDbContext())
+                {
+                    var dbEntry = context.Entries.Find(entry.Id);
+                    dbEntry.TimeClockNumber = entry.TimeClockNumber;
+                    dbEntry.FirstName = entry.FirstName;
+                    dbEntry.LastName = entry.LastName;
+                    dbEntry.JobTitle = entry.JobTitle;
+                    dbEntry.DepartmentId = entry.DepartmentId;
+                    dbEntry.PhoneNumber = entry.PhoneNumber;
+                    dbEntry.EmailAddress = entry.EmailAddress;
+                    dbEntry.SkillId = entry.SkillId;
+                    dbEntry.Notes = entry.Notes;
+                    context.SaveChanges();
+                }
 
                 TempData["Message"] = "You successfully edited the staff listing.";
 
@@ -109,7 +145,15 @@ namespace CorgiDev.StaffDirectoryProject.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Entry entry = _entriesRepository.GetEntry((int)id);
+
+            Entry entry;//= _entriesRepository.GetEntry((int)id);
+            using (var context = new MyDbContext())
+            {
+                entry = context.Entries
+                    .Include(e => e.Department)
+                    .Include(e => e.Skill)
+                    .Single(e => e.Id == id);
+            }
 
             if (entry == null)
             {
@@ -122,7 +166,13 @@ namespace CorgiDev.StaffDirectoryProject.Controllers
         [HttpPost]
         public ActionResult Delete(int id)
         {
-            _entriesRepository.DeleteEntry(id);
+            //_entriesRepository.DeleteEntry(id);
+            using (var context = new MyDbContext())
+            {
+                var entry = context.Entries.Find(id);
+                context.Entries.Remove(entry);
+                context.SaveChanges();
+            }
 
             TempData["Message"] = "You successfully deleted the staff listing.";
             return RedirectToAction("Index");
@@ -140,14 +190,25 @@ namespace CorgiDev.StaffDirectoryProject.Controllers
 
         private void SetupDepartmentsSelectListItems()
         {
+            List<Department> departments;
+            using (var context = new MyDbContext())
+            {
+                departments = context.Departments.ToList();
+            }
             ViewBag.DepartmentsSelectListItems = new SelectList(
-                            Data.Data.Departments, "Id", "Name");
+                            departments, "Id", "Name");
         }
 
         private void SetupSkillsSelectListItems()
         {
+            List<Skill> skills;
+            using (var context = new MyDbContext())
+            {
+                skills = context.Skills.ToList();
+            }
+
             ViewBag.SkillsSelectListItems = new SelectList(
-                            Data.Data.Skills, "Id", "Name");
+                                skills, "Id", "Name");
         }
 
         public ActionResult About()
