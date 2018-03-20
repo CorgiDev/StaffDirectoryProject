@@ -14,9 +14,9 @@ and testing purposes. See deployment for notes on how to deploy the project on a
 
 ### Prerequisites
 
-LocaldB (included with Visual Studio Community 2017)
-Visual Studio Community 2017
-A browser (tested with Google Chrome, IE, Edge and FireFox)
+* LocaldB (included with Visual Studio Community 2017)
+* Visual Studio Community 2017
+* A browser (tested with Google Chrome, IE, Edge and FireFox)
 
 ### Installing
 1. Install Visual Studio Community 2017.
