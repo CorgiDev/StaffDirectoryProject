@@ -34,7 +34,7 @@ namespace CorgiDev.StaffDirectoryProject.Models
 
             // If we don't have a name argument, 
             // then use the string representation of the skill type for the name.
-            Name = name ?? nameof(skillType);
+            Name = name ?? Enum.GetName(typeof(SkillType), skillType);
         }
 
         public Skill()

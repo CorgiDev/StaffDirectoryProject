@@ -1,4 +1,4 @@
-namespace StaffDirectoryProject.Migrations
+namespace CorgiDev.StaffDirectoryProject.Migrations
 {
     using System;
     using System.Data.Entity.Migrations;

@@ -15,16 +15,14 @@ namespace CorgiDev.StaffDirectoryProject.Controllers
 {
     public class HomeController : Controller
     {
-        private EntriesRepository _entriesRepository = null;
 
         public HomeController()
         {
-            _entriesRepository = new EntriesRepository();
         }
 
         public ActionResult Index()
         {
-            List<Entry> entries; //= _entriesRepository.GetEntries();
+            List<Entry> entries;
             using (var context = new MyDbContext())
             {
                 entries = context.Entries
@@ -53,16 +51,13 @@ namespace CorgiDev.StaffDirectoryProject.Controllers
         [HttpPost]
         public ActionResult Add(Entry entry)
         {
-            //ValidateEntry(entry);
-            using (var context = new MyDbContext())
-            {
-                context.Entries.Add(entry);
-                context.SaveChanges();
-            }
-
             if (ModelState.IsValid)
                 {
-                    _entriesRepository.AddEntry(entry);
+                    using (var context = new MyDbContext())
+                    {
+                        context.Entries.Add(entry);
+                        context.SaveChanges();
+                    }
                     TempData["Message"] = "Your staff listing was successfully added.";
                     return RedirectToAction("Index");
                 }
@@ -81,7 +76,7 @@ namespace CorgiDev.StaffDirectoryProject.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            Entry entry; //= _entriesRepository.GetEntry((int)id);
+            Entry entry; 
             using (var context = new MyDbContext())
             {
                 entry = context.Entries
@@ -146,7 +141,7 @@ namespace CorgiDev.StaffDirectoryProject.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            Entry entry;//= _entriesRepository.GetEntry((int)id);
+            Entry entry;
             using (var context = new MyDbContext())
             {
                 entry = context.Entries
@@ -166,7 +161,6 @@ namespace CorgiDev.StaffDirectoryProject.Controllers
         [HttpPost]
         public ActionResult Delete(int id)
         {
-            //_entriesRepository.DeleteEntry(id);
             using (var context = new MyDbContext())
             {
                 var entry = context.Entries.Find(id);
@@ -177,16 +171,6 @@ namespace CorgiDev.StaffDirectoryProject.Controllers
             TempData["Message"] = "You successfully deleted the staff listing.";
             return RedirectToAction("Index");
         }
-
-        //private void ValidateEntry(Entry entry)
-        //{
-        //    //If there aren't any "Duration" field validation errors
-        //    //then make sure the duration is greater than "0".
-        //    if (ModelState.IsValidField("FirstName") && entry.Duration <= 0)
-        //    {
-        //        ModelState.AddModelError("FirstName", "The First Name field value must be greater than '0'.");
-        //    }
-        //}
 
         private void SetupDepartmentsSelectListItems()
         {

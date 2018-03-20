@@ -151,17 +151,13 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Data\Data.cs" />
-    <Compile Include="Data\DepartmentsRepository.cs" />
-    <Compile Include="Data\EntriesRepository.cs" />
     <Compile Include="Data\MyDbContext.cs" />
-    <Compile Include="Data\SkillsRepository.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201803200147046_InitialCreate.cs" />
-    <Compile Include="Migrations\201803200147046_InitialCreate.Designer.cs">
-      <DependentUpon>201803200147046_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\201803200409311_InitialCreate.cs" />
+    <Compile Include="Migrations\201803200409311_InitialCreate.Designer.cs">
+      <DependentUpon>201803200409311_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Department.cs" />
@@ -245,7 +241,6 @@
     <Content Include="Views\Home\Delete.cshtml" />
     <Content Include="Views\Home\Edit.cshtml" />
     <Content Include="Views\Shared\_Logo.cshtml" />
-    <Content Include="Views\Home\EntryDetail.cshtml" />
     <Content Include="Scripts\umd\popper.min.js.map" />
     <Content Include="Scripts\umd\popper.js.map" />
     <Content Include="Scripts\umd\popper-utils.min.js.map" />
@@ -269,8 +264,8 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201803200147046_InitialCreate.resx">
-      <DependentUpon>201803200147046_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201803200409311_InitialCreate.resx">
+      <DependentUpon>201803200409311_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

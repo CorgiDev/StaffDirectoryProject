@@ -1,10 +1,3 @@
-A brief description of your project’s purpose. Example: "A website for my local animal shelter. I tried to enhance 
-their current site by implementing a pet tracking database." Try to think of what would be useful to a potential 
-employer that is looking at your GitHub account without any context or background about Code Louisville or your project.
-Instructions on any special requirements to run your project. If your project can be executed by opening the solution in 
-Visual Studio and clicking Run, that is sufficient. If you require any configurations to your connection string, environment 
-dependencies, or special instruction to run it, you must include details on how to do so.
-
 # Staff Directory Project
 
 The purpose of this project is to demonstrate some of the ASP.Net and C# knowledge I have gained thus far.
@@ -16,26 +9,22 @@ search for which employees have particular Accessibility skills they need help w
 
 ## Getting Started
 
-UNDER CONSTRUCTION!
 These instructions will get you a copy of the project up and running on your local machine for development 
 and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
 ### Prerequisites
 
-UNDER CONSTRUCTION!
-LocaldB
-Visual Studio Community
+LocaldB (included with Visual Studio Community 2017)
+Visual Studio Community 2017
+A browser (tested with Google Chrome, IE, Edge and FireFox)
 
 ### Installing
-
-UNDER CONSTRUCTION!
-A step by step series of examples that tell you have to get a development env running
-
-Say what the step will be
-
-```
-Give the example
-```
+1. Install Visual Studio Community 2017.
+2. Update Visual Studio Community 2017.
+3. Open the Solution file, StaffDirectoryProject.sln, for the program.
+4. Select the browser you wish to run the program with.
+5. Click Start or press F5 to run the program.
+6. Close the browser once you are done to close out the program.
 
 ## Built With
 * [.Net Framework] (https://docs.microsoft.com/en-us/dotnet/) - The web framework used to develop this project with C#.
@@ -43,9 +32,7 @@ Give the example
 * [Entity Framework](https://docs.microsoft.com/en-us/ef/ef6/)
 
 ## Notes
-The EntryDetail.cshtml file is currently not implemented. The code for the "View" button in the 
-Index.cshtml file that would call it has been commented out for now. I left it though because I 
-plan on continuing to edit this past my time in Code Louisville.
+Edge for some reason does not like to close out projects when you close the browser. You have to go into Visual Studio and click the stop button to stop the project running.
 
 ## Authors
 

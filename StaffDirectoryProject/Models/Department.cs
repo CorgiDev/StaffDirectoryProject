@@ -40,7 +40,7 @@ namespace CorgiDev.StaffDirectoryProject.Models
 
             // If we don't have a name argument, 
             // then use the string representation of the activity type for the name.
-            Name = name ?? departmentName.ToString();
+            Name = name ?? Enum.GetName(typeof(DepartmentName),departmentName);
         }
 
         public Department()
