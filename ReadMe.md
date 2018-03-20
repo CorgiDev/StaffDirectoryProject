@@ -33,7 +33,7 @@ A browser (tested with Google Chrome, IE, Edge and FireFox)
 ## Built With
 * [.Net Framework](https://docs.microsoft.com/en-us/dotnet/) - The web framework used to develop this project with C#.
 * [ASP.Net Framework](https://blogs.msdn.microsoft.com/webdev/2017/02/07/asp-net-documentation-now-on-docs-microsoft-com/) - The web framework used
-* [Entity Framework](https://docs.microsoft.com/en-us/ef/ef6/)
+* [Entity Framework](https://docs.microsoft.com/en-us/ef/ef6/) - Used for handling the database connection.
 
 ## Notes
 Edge for some reason does not like to close out projects when you close the browser. You have to go into Visual Studio and click the stop button to stop the project running.
