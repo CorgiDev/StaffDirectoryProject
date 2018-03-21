@@ -1,8 +1,10 @@
-﻿@{
+﻿@using System
+@using System.Security.Policy
+@{
     var applicationName = "Accessibility Help Directory";
 }
 
-@helper GetAddEntryButtonVisibility()
+@*@helper GetAddEntryButtonVisibility()
 {
 if ((string)ViewContext.RouteData.Values["controller"] == "Home" &&
     (string)ViewContext.RouteData.Values["action"] == "Add")
@@ -13,7 +15,7 @@ else
 {
         <text>visible</text>
 }
-}
+}*@
 
 <!DOCTYPE html>
 <html>
@@ -37,7 +39,8 @@ else
                 </button>
                 <a class="navbar-brand" href="@Url.Action("Index", "Home")">
                     @*@Html.Partial("_Logo", new ViewDataDictionary { { "element-id", "logo" } })*@
-                    @applicationName
+                    <img src="~/Content/Images/corgidev-logo.png" height="30px" width="30px" />
+                    @*@applicationName*@ Accessibility Directory
                 </a>
             </div>
             <div class="navbar-collapse collapse">
@@ -46,10 +49,6 @@ else
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                 </ul>
-                <a href="@Url.Action("Add", "Home")" style="visibility: @GetAddEntryButtonVisibility()"
-                   class="btn btn-primary navbar-btn navbar-right">
-                    <span class="glyphicon glyphicon-plus"></span> Add Staff Listing
-                </a>
             </div>
         </div>
     </div>

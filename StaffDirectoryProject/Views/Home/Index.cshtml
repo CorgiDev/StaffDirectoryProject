@@ -2,8 +2,22 @@
     ViewBag.Title = "Accessible Help Directory Home";
 }
 
+@helper GetAddEntryButtonVisibility()
+{
+    if ((string)ViewContext.RouteData.Values["controller"] == "Home" &&
+        (string)ViewContext.RouteData.Values["action"] == "Add")
+    {
+        <text>hidden</text>
+    }
+    else
+    {
+        <text>visible</text>
+    }
+}
+
+
 <div class="jumbotron">
-    <h1>Accessibility Assistance Directory</h1>
+    <h1>Accessibility Help Directory</h1>
     <p class="lead"><strong>DISCLAIMER:</strong> Please note that the data in this table is not actual data at this time. It is simply test data.</p>
 </div>
 
@@ -19,6 +33,10 @@
 }
 
 <div>
+    <a href="@Url.Action("Add", "Home")" style="visibility: @GetAddEntryButtonVisibility()"
+       class="btn btn-primary navbar-btn navbar-right">
+        <span class="glyphicon glyphicon-plus"></span> Add Staff Listing
+    </a>
     <table class="table">
         <tr>
             <th>First Name</th>
@@ -44,11 +62,11 @@
                                 <span class="glyphicon glyphicon-info-sign"></span><span class="hidden-xs"> Details</span>
                             </a>*@
 
-                        <a href="@Url.Action("Edit", new { id = entry.Id })" class="btn btn-warning btn-sm margin-right" role="button">
+                        <a href="@Url.Action("Edit", new {id = entry.Id})" class="btn btn-warning btn-sm margin-right" role="button">
                             <span class="glyphicon glyphicon-edit"></span><span class="hidden-xs"> Edit</span>
                         </a>
 
-                        <a href="@Url.Action("Delete", new { id = entry.Id })" class="btn btn-danger btn-sm" role="button">
+                        <a href="@Url.Action("Delete", new {id = entry.Id})" class="btn btn-danger btn-sm" role="button">
                             <span class="glyphicon glyphicon-trash"></span><span class="hidden-xs"> Delete</span>
                         </a>
 

@@ -180,3 +180,25 @@ footer {
     height: 32px;
     margin-bottom: 15px
 }
+
+/*These will affect the logo image in the upper bar*/
+.navbar-brand {
+    width: 70;
+    padding: auto 0 auto 8px;
+    /*margin: 2px 0 2px 0;*/
+}
+
+.navbar-collapse {
+    float: right;
+}
+
+.navbar-brand img {
+    width: 30px;
+    height: 30px;
+    float: left;
+    margin: auto 8px auto 0;
+    padding: auto 0;
+    line-height: 30px;
+    display: inline-block;
+    vertical-align: middle;
+}
